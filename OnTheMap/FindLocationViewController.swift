@@ -28,6 +28,17 @@ class FindLocationViewController: UIViewController, MKMapViewDelegate {
         self.startLocationSearch()
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.title = "Add Location"
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
 
     private func configureActivityIndicator() {
         
@@ -103,7 +114,7 @@ class FindLocationViewController: UIViewController, MKMapViewDelegate {
             ParseClient.sharedInstance().postStudentLocation(studentLocation, completionHandlerForPostLocation: { (objectId, error) in
                 if error != nil {
                     self.activityIndicator.stopAnimating()
-                    AlertController.sharedInstance().displayAlertView(viewController: self, errorString: Constants.InternetOfflineMessage)
+                    AlertController.sharedInstance().displayAlertView(viewController: self, errorString: AppConstants.InternetOfflineMessage)
                 } else {
                     self.goToMapView()
                 }
@@ -114,6 +125,7 @@ class FindLocationViewController: UIViewController, MKMapViewDelegate {
     
     func goToMapView() {
         self.activityIndicator.stopAnimating()
-        dismiss(animated: true, completion: nil)
+        self.tabBarController?.tabBar.isHidden = false
+        self.navigationController?.popToRootViewController(animated: true)
     }
 }

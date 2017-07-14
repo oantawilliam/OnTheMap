@@ -73,8 +73,8 @@ class UdacityClient: RequestsClient {
         let _ = self.taskForPOSTMethod(request, jsonBody: jsonBody) { (result, error) in
             
             /* 3. Send the desired value(s) to completion handler */
-            if let error = error {
-                completionHandlerForGetSessionID(nil, error)
+            if error != nil {
+                completionHandlerForGetSessionID(nil, NSError(domain: "getSessionID parsing", code: 0, userInfo: [NSLocalizedDescriptionKey: AppConstants.InternetOfflineMessage]))
             } else {
                 if let account = result?[UdacityClient.JSONResponseKeys.Account] as? [String:AnyObject], let registered = account[UdacityClient.JSONResponseKeys.AccountState] as? Bool,
                     registered {

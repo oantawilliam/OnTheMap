@@ -16,7 +16,17 @@ class AddLocationViewController: UIViewController {
     
     // MARK: Actions
     @IBAction func onCancel(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     @IBAction func onFindLocation(_ sender: Any) {
@@ -26,15 +36,16 @@ class AddLocationViewController: UIViewController {
         if Validator.isUrlValid(urlString: link){
             self.goToFindLocationView(location, link)
         } else {
-            AlertController.sharedInstance().displayAlertView(viewController: self, errorString: Constants.InvalidURLMessage)
+            AlertController.sharedInstance().displayAlertView(viewController: self, errorString: AppConstants.InvalidURLMessage)
         }
     }
     
     private func goToFindLocationView(_ location: String, _ link: String) {
-        let controller = storyboard!.instantiateViewController(withIdentifier: "FindLocationViewController") as! FindLocationViewController
+        let findLocationViewController = storyboard!.instantiateViewController(withIdentifier: "FindLocationViewController") as! FindLocationViewController
         
-        controller.location = location
-        controller.link = link
-        self.present(controller, animated: true)
+        findLocationViewController.location = location
+        findLocationViewController.link = link
+    
+        self.navigationController!.pushViewController(findLocationViewController, animated: true)
     }
 }

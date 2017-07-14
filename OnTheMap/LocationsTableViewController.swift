@@ -55,6 +55,9 @@ class LocationsTableViewController: OnMapViewController, UITableViewDelegate, UI
     
     // MARK: - Actions
     
+    @IBAction func onAddPinPressed(_ sender: Any) {
+        self.goToAddLocationView()
+    }
     @IBAction func onLogoutPressed(_ sender: Any) {
         self.logout()
     }

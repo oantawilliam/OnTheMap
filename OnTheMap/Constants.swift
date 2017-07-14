@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Constants {
+struct AppConstants {
     static let InternetOfflineMessage = "The Internet Connection appears to be Offline"
     static let InvalidEmailMessage = "Please enter a valid email!"
     static let InvalidURLMessage = "Please enter a valid URL!"

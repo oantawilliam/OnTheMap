@@ -36,7 +36,7 @@ class OnMapViewController: UIViewController {
                 completionHandler(true)
             } else {
                 self.activityIndicator.stopAnimating()
-                self.displayError(Constants.InternetOfflineMessage)
+                self.displayError(AppConstants.InternetOfflineMessage)
             }
         }
     }
@@ -54,9 +54,14 @@ class OnMapViewController: UIViewController {
                 }
             } else {
                 self.activityIndicator.stopAnimating()
-                self.displayError(Constants.InternetOfflineMessage)
+                self.displayError(AppConstants.InternetOfflineMessage)
             }
         }
+    }
+    
+    func goToAddLocationView() {
+        let addLocationViewController = self.storyboard!.instantiateViewController(withIdentifier: "AddLocationViewController") as! AddLocationViewController
+        self.navigationController!.pushViewController(addLocationViewController, animated: true)
     }
     
     private func completeLogoutAction() {
