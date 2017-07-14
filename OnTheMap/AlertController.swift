@@ -17,7 +17,7 @@ class AlertController: NSObject {
     
     func displayAlertView(viewController: UIViewController, errorString: String) {
         let alert = UIAlertController(title: "Error", message: errorString, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
         viewController.present(alert, animated: true, completion: nil)
     }
     

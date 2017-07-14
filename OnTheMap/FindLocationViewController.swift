@@ -12,6 +12,7 @@ import MapKit
 class FindLocationViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var map: MKMapView!
+    @IBOutlet weak var navBar: UINavigationBar!
     
     var activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
     
@@ -51,6 +52,7 @@ class FindLocationViewController: UIViewController, MKMapViewDelegate {
             
             if localSearchResponse == nil{
                 AlertController.sharedInstance().displayAlertView(viewController: self, errorString: "Place Not Found")
+                self.activityIndicator.stopAnimating()
                 return
             }
 
@@ -100,7 +102,8 @@ class FindLocationViewController: UIViewController, MKMapViewDelegate {
             
             ParseClient.sharedInstance().postStudentLocation(studentLocation, completionHandlerForPostLocation: { (objectId, error) in
                 if error != nil {
-                    AlertController.sharedInstance().displayAlertView(viewController: self, errorString: "Could not save your location")
+                    self.activityIndicator.stopAnimating()
+                    AlertController.sharedInstance().displayAlertView(viewController: self, errorString: Constants.InternetOfflineMessage)
                 } else {
                     self.goToMapView()
                 }
@@ -111,7 +114,6 @@ class FindLocationViewController: UIViewController, MKMapViewDelegate {
     
     func goToMapView() {
         self.activityIndicator.stopAnimating()
-        let controller = storyboard!.instantiateViewController(withIdentifier: "MapAndTableTabbedView") as! UITabBarController
-        self.present(controller, animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 }

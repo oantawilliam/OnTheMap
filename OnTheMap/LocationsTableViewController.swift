@@ -21,7 +21,7 @@ class LocationsTableViewController: OnMapViewController, UITableViewDelegate, UI
     
     func reloadTable() {
         self.activityIndicator.startAnimating()
-        self.getStudentLocations { locations in
+        self.getStudentLocations { success in
             performUIUpdatesOnMain {
                 self.table.reloadData()
                 self.activityIndicator.stopAnimating()
@@ -35,7 +35,7 @@ class LocationsTableViewController: OnMapViewController, UITableViewDelegate, UI
         
         /* Get cell type */
         let cell = tableView.dequeueReusableCell(withIdentifier: "StudentLocationCell") as UITableViewCell!
-        let location = self.locations[(indexPath as NSIndexPath).row]
+        let location = StudentLocations.sharedInstance().locations[(indexPath as NSIndexPath).row]
 
         /* Set cell */
         cell?.textLabel!.text = location.firstName + " " + location.lastName
@@ -46,10 +46,10 @@ class LocationsTableViewController: OnMapViewController, UITableViewDelegate, UI
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.locations.count
+        return StudentLocations.sharedInstance().locations.count
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let location = self.locations[(indexPath as NSIndexPath).row]
+        let location = StudentLocations.sharedInstance().locations[(indexPath as NSIndexPath).row]
         UIApplication.shared.open(URL(string: location.mediaURL)!)
     }
     

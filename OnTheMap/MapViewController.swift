@@ -62,10 +62,10 @@ class MapViewController: OnMapViewController, MKMapViewDelegate {
     
     func reloadMap() {
         self.activityIndicator.startAnimating()
-        self.getStudentLocations { locations in
+        self.getStudentLocations { success in
             
             var annotations = [MKPointAnnotation]()
-            for studentLocation in locations! {
+            for studentLocation in StudentLocations.sharedInstance().locations {
                 
                 // Notice that the float values are being used to create CLLocationDegree values.
                 // This is a version of the Double type.

@@ -12,7 +12,7 @@ class ParseClient: RequestsClient {
     
     // MARK: User Data Tasks
     
-    func getStudenLocations(_ completionHandlerForGetStudentLocations: @escaping (_ result: [StudentLocation]?, _ error: NSError?) -> Void) {
+    func getStudenLocations(_ completionHandlerForGetStudentLocations: @escaping (_ success: Bool?, _ error: NSError?) -> Void) {
         
         let mutableMethod: String = Methods.StudentLocation
         let parameters = [ParseClient.ParameterKeys.MaxLocations: 100]
@@ -32,9 +32,8 @@ class ParseClient: RequestsClient {
             } else {
                 
                 if let results = results?[ParseClient.JSONResponseKeys.Results] as? [[String:AnyObject]] {
-                    
-                    let locations = StudentLocation.locationsFromResults(results)
-                    completionHandlerForGetStudentLocations(locations, nil)
+                    StudentLocations.sharedInstance().locations = StudentLocation.locationsFromResults(results)
+                    completionHandlerForGetStudentLocations(true, nil)
                 } else {
                     completionHandlerForGetStudentLocations(nil, NSError(domain: "getStudenLocations parsing", code: 0, userInfo: [NSLocalizedDescriptionKey: "Could not parse getStudenLocations"]))
                 }

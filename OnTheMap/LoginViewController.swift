@@ -46,7 +46,7 @@ class LoginViewController: UIViewController {
         if Validator.isEmailAddressValid(emailAddressString: email) {
             self.continueLoginProcess(email: email, password: password)
         } else {
-            AlertController.sharedInstance().displayAlertView(viewController: self, errorString: "Please enter a valid email!")
+            AlertController.sharedInstance().displayAlertView(viewController: self, errorString: Constants.InvalidEmailMessage)
         }
     }
     
@@ -58,14 +58,15 @@ class LoginViewController: UIViewController {
                 if success {
                     self.completeLogin()
                 } else {
-                    self.displayError(errorString)
+                    self.activityIndicator.stopAnimating()
+                    self.displayError(Constants.InternetOfflineMessage)
                 }
             }
         }
     }
 
     @IBAction func onSignUp(_ sender: Any) {
-        UIApplication.shared.open(URL(string: "http://www.udacity.com")!)
+        UIApplication.shared.open(URL(string: Constants.UdacityURL)!)
     }
     
     private func completeLogin() {

@@ -26,7 +26,7 @@ class AddLocationViewController: UIViewController {
         if Validator.isUrlValid(urlString: link){
             self.goToFindLocationView(location, link)
         } else {
-            AlertController.sharedInstance().displayAlertView(viewController: self, errorString: "Please enter a valid URL!")
+            AlertController.sharedInstance().displayAlertView(viewController: self, errorString: Constants.InvalidURLMessage)
         }
     }
     
@@ -35,7 +35,6 @@ class AddLocationViewController: UIViewController {
         
         controller.location = location
         controller.link = link
-        
-        self.navigationController?.pushViewController(controller, animated: true)
+        self.present(controller, animated: true)
     }
 }

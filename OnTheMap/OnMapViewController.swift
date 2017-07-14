@@ -10,7 +10,6 @@ import UIKit
 
 class OnMapViewController: UIViewController {
 
-    var locations: [StudentLocation] = [StudentLocation]()
     var activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
     
     override func viewDidLoad() {
@@ -31,13 +30,13 @@ class OnMapViewController: UIViewController {
         view.addConstraint(verticalConstraint)
     }
     
-    func getStudentLocations(_ completionHandler: @escaping (_ result: [StudentLocation]?) -> Void) {
-        ParseClient.sharedInstance().getStudenLocations { (locations, errorString) in
-            if let locations = locations {
-                self.locations = locations
-                completionHandler(self.locations)
+    func getStudentLocations(_ completionHandler: @escaping (_ success: Bool) -> Void) {
+        ParseClient.sharedInstance().getStudenLocations { (success, errorString) in
+            if let success = success, success {
+                completionHandler(true)
             } else {
-                self.displayError(errorString?.localizedDescription)
+                self.activityIndicator.stopAnimating()
+                self.displayError(Constants.InternetOfflineMessage)
             }
         }
     }
@@ -54,17 +53,14 @@ class OnMapViewController: UIViewController {
                     self.completeLogoutAction()
                 }
             } else {
-                self.displayError(errorString?.localizedDescription)
+                self.activityIndicator.stopAnimating()
+                self.displayError(Constants.InternetOfflineMessage)
             }
         }
     }
     
     private func completeLogoutAction() {
-        self.navigationController?.viewControllers.removeAll()
-        
         self.activityIndicator.stopAnimating()
-        
-        let controller = storyboard!.instantiateViewController(withIdentifier: "LoginViewController")
-        present(controller, animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 }

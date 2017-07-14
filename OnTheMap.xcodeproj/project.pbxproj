@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7620F54B1F18D0FC00CBB2F7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7620F54A1F18D0FC00CBB2F7 /* Constants.swift */; };
 		762C2A381F176E10001734CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762C2A371F176E10001734CA /* AppDelegate.swift */; };
 		762C2A3A1F176E10001734CA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762C2A391F176E10001734CA /* LoginViewController.swift */; };
 		762C2A3D1F176E10001734CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 762C2A3B1F176E10001734CA /* Main.storyboard */; };
@@ -27,9 +28,11 @@
 		76ADFF751F1819F100D56C3F /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ADFF741F1819F100D56C3F /* AlertController.swift */; };
 		76ADFF771F181C7B00D56C3F /* FindLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ADFF761F181C7B00D56C3F /* FindLocationViewController.swift */; };
 		76ADFF7A1F182C2500D56C3F /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ADFF791F182C2500D56C3F /* UserData.swift */; };
+		76ADFF7F1F18C81E00D56C3F /* StudentLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ADFF7E1F18C81E00D56C3F /* StudentLocations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7620F54A1F18D0FC00CBB2F7 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		762C2A341F176E10001734CA /* OnTheMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnTheMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		762C2A371F176E10001734CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		762C2A391F176E10001734CA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +55,7 @@
 		76ADFF741F1819F100D56C3F /* AlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		76ADFF761F181C7B00D56C3F /* FindLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindLocationViewController.swift; sourceTree = "<group>"; };
 		76ADFF791F182C2500D56C3F /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		76ADFF7E1F18C81E00D56C3F /* StudentLocations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentLocations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,7 @@
 				762C2A581F179017001734CA /* RequestsClient.swift */,
 				76ADFF631F17D88000D56C3F /* Parse */,
 				762C2A531F178F8F001734CA /* Udacity */,
+				7620F54A1F18D0FC00CBB2F7 /* Constants.swift */,
 			);
 			name = Clients;
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 			children = (
 				76ADFF6A1F17E0FF00D56C3F /* StudentLocation.swift */,
 				76ADFF791F182C2500D56C3F /* UserData.swift */,
+				76ADFF7E1F18C81E00D56C3F /* StudentLocations.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -254,7 +260,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				762C2A591F179017001734CA /* RequestsClient.swift in Sources */,
+				7620F54B1F18D0FC00CBB2F7 /* Constants.swift in Sources */,
 				76ADFF751F1819F100D56C3F /* AlertController.swift in Sources */,
+				76ADFF7F1F18C81E00D56C3F /* StudentLocations.swift in Sources */,
 				76ADFF721F18187C00D56C3F /* Validator.swift in Sources */,
 				76ADFF6B1F17E0FF00D56C3F /* StudentLocation.swift in Sources */,
 				76ADFF6D1F17E86000D56C3F /* OnMapViewController.swift in Sources */,
