@@ -118,11 +118,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OnTheMap/ParseClient.swift"
-            timestampString = "521718793.968843"
+            timestampString = "521726447.716333"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "getStudenLocations(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -166,11 +166,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OnTheMap/ParseClient.swift"
-            timestampString = "521718793.968843"
+            timestampString = "521726447.716333"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "getStudenLocations(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -182,11 +182,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OnTheMap/ParseClient.swift"
-            timestampString = "521667159.404465"
+            timestampString = "521726447.716333"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "getStudenLocations(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -310,11 +310,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OnTheMap/ParseClient.swift"
-            timestampString = "521718793.968843"
+            timestampString = "521726447.716333"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "sharedInstance()"
             landmarkType = "7">
          </BreakpointContent>
@@ -406,11 +406,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OnTheMap/ParseClient.swift"
-            timestampString = "521718793.968843"
+            timestampString = "521726447.716333"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "postStudentLocation(_:completionHandlerForPostLocation:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -422,11 +422,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OnTheMap/ParseClient.swift"
-            timestampString = "521718793.968843"
+            timestampString = "521726447.716333"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "Singleton"
             landmarkType = "14">
             <Locations>
@@ -486,11 +486,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OnTheMap/ParseClient.swift"
-            timestampString = "521718793.968843"
+            timestampString = "521726447.716333"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "postStudentLocation(_:completionHandlerForPostLocation:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -566,7 +566,7 @@
                   moduleName = "OnTheMap"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/william.oanta/iOS/OnTheMap/OnTheMap/OnMapViewController.swift"
-                  timestampString = "521724484.863376"
+                  timestampString = "521726448.852451"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "35"
@@ -581,7 +581,7 @@
                   moduleName = "OnTheMap"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/william.oanta/iOS/OnTheMap/OnTheMap/OnMapViewController.swift"
-                  timestampString = "521724484.864752"
+                  timestampString = "521726448.855576"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "35"
@@ -604,6 +604,22 @@
             startingLineNumber = "27"
             endingLineNumber = "27"
             landmarkName = "authenticateWithViewController(email:password:completionHandlerForAuth:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OnTheMap/ParseClient.swift"
+            timestampString = "521726342.390343"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "getStudenLocations(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

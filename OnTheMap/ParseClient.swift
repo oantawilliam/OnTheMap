@@ -15,7 +15,8 @@ class ParseClient: RequestsClient {
     func getStudenLocations(_ completionHandlerForGetStudentLocations: @escaping (_ success: Bool?, _ error: NSError?) -> Void) {
         
         let mutableMethod: String = Methods.StudentLocation
-        let parameters = [ParseClient.ParameterKeys.MaxLocations: 100]
+        let parameters = [ParseClient.ParameterKeys.MaxLocations: 100,
+                          ParseClient.ParameterKeys.Order: "updatedAt"] as [String : Any]
         
         let request = NSMutableURLRequest(url: self.urlFromParameters(parameters as [String : AnyObject], withPathExtension: mutableMethod))
         
